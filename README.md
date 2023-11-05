@@ -6,7 +6,7 @@ Available on [NuGet](https://www.nuget.org/packages/Nexd.MySQL/)
 [![NuGet version (Nexd.Reflection)](https://img.shields.io/nuget/v/Nexd.MySQL.svg?style=flat-square)](https://www.nuget.org/packages/Nexd.MySQL/)
 
 ```
-dotnet add package Nexd.MySQL --version 1.0.0
+dotnet add package Nexd.MySQL --version 1.0.1
 ```
 
 ### Initialization
