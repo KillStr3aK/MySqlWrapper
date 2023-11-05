@@ -1,4 +1,4 @@
-﻿namespace Source2Framework.MySQL
+﻿namespace Nexd.MySQL
 {
     using MySqlConnector;
 
@@ -83,10 +83,10 @@
             return await this.ExecuteQueryInternalAsync(this.Query);
         }
 
-        public void Update(MySqlQueryValue data)
+        public int Update(MySqlQueryValue data)
         {
             this.Query = "UPDATE `" + this.TableName + "` SET " + string.Join(", ", data.Select(x => "`" + x.Key + "` = '" + x.Value + "'").ToArray()) + " " + this.WhereQuery;
-            this.ExecuteNonQueryInternal(this.Query);
+            return this.ExecuteNonQueryInternal(this.Query);
         }
 
         public async Task<int> UpdateAsync(MySqlQueryValue data)

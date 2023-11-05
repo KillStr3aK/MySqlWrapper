@@ -1,4 +1,4 @@
-﻿namespace Source2Framework.MySQL
+﻿namespace Nexd.MySQL
 {
     public class MySqlQueryCondition : Dictionary<string, MySqlFieldValue>
     {
@@ -16,7 +16,7 @@
             }
         }
 
-        public MySqlQueryCondition Add(string column, string expression, string value)
+        public MySqlQueryCondition Add(string column, string expression, string? value)
         {
             if (!this.ContainsKey(column))
             {
@@ -35,6 +35,11 @@
             }
 
             return this;
+        }
+
+        public MySqlQueryCondition Add<T>(string column, string expression, T value)
+        {
+            return this.Add(column, expression, value?.ToString());
         }
 
         public static MySqlQueryCondition New(string column, string expression, string value)

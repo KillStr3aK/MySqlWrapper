@@ -1,4 +1,4 @@
-﻿namespace Source2Framework.MySQL
+﻿namespace Nexd.MySQL
 {
     public class MySqlFieldValue : Dictionary<string, string?>
     {
