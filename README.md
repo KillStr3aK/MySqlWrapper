@@ -17,6 +17,16 @@ using Nexd.MySQL;
 MySqlDb MySql = new MySqlDb("localhost", "root", "password", "database");
 ```
 
+### ExecuteQuery & ExecuteNonQuery usage (unsafe)
+
+These functions are not safe in the context of SQL injection. Make sure to escape your values correctly before executing. (MySqlHelper.EscapeString(value);)
+
+```c#
+MySql.ExecuteQuery($"SELECT * FROM `Players` WHERE Name = '{name}';", name); make sure that the name is escaped.
+
+MySql.ExecuteNonQuery("DELETE * FROM `Players`;");
+```
+
 ### Where condition
 ```c#
 // WITH WRAPPER CLASSES
