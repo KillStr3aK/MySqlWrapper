@@ -110,21 +110,45 @@
             return await this.ExecuteNonQueryInternalAsync(this.Query);
         }
 
+        /// <summary>
+        /// Executes a non query statement.
+        /// Make sure to validate your input to prevent sql injections.
+        /// </summary>
+        /// <param name="statement"></param>
+        /// <returns>Affected number of rows.</returns>
         public int ExecuteNonQuery(string statement)
         {
             return this.ExecuteNonQueryInternal(statement);
         }
 
+        /// <summary>
+        /// Executes a non query statement.
+        /// Make sure to validate your input to prevent sql injections.
+        /// </summary>
+        /// <param name="statement"></param>
+        /// <returns>Affected number of rows.</returns>
         public async Task<int> ExecuteNonQueryAsync(string statement)
         {
             return await this.ExecuteNonQueryInternalAsync(statement);
         }
 
+        /// <summary>
+        /// Executes a query statement.
+        /// Make sure to validate your input to prevent sql injections.
+        /// </summary>
+        /// <param name="statement"></param>
+        /// <returns></returns>
         public MySqlQueryResult ExecuteQuery(string statement)
         {
             return this.ExecuteQueryInternal(statement);
         }
 
+        /// <summary>
+        /// Executes a query statement.
+        /// Make sure to validate your input to prevent sql injections.
+        /// </summary>
+        /// <param name="statement"></param>
+        /// <returns></returns>
         public async Task<MySqlQueryResult> ExecuteQueryAsync(string statement)
         {
             return await this.ExecuteQueryInternalAsync(statement);
