@@ -15,10 +15,13 @@
 
         private readonly string ConnectionString = string.Empty;
 
-        public MySqlDb(string input)
+        public MySqlDb(MySqlConnectionStringBuilder builder)
         {
-            this.ConnectionString = input;
+            this.ConnectionString = builder.ConnectionString;
         }
+
+        public MySqlDb(string input) : this(new MySqlConnectionStringBuilder(input))
+            { }
 
         public MySqlDb(MySqlConfig config) : this(config.ToString())
             { }
