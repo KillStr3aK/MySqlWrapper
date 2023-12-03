@@ -195,7 +195,7 @@
 
                                 for (int col = 0; col < reader.FieldCount; col++)
                                 {
-                                    value.Add(reader.GetName(col).ToString(), reader.GetValue(col).ToString());
+                                    value.Add(reader.GetName(col).ToString(), reader.GetValue(col).ToString(), false);
                                 }
 
                                 result.Add(rowCol, value);
@@ -230,7 +230,7 @@
 
                                 for (int col = 0; col < reader.FieldCount; col++)
                                 {
-                                    value.Add(reader.GetName(col).ToString(), reader.GetValue(col).ToString());
+                                    value.Add(reader.GetName(col).ToString(), reader.GetValue(col).ToString(), false);
                                 }
 
                                 result.Add(rowCol, value);
