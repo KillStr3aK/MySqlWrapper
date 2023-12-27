@@ -26,8 +26,8 @@
         public MySqlDb(MySqlConfig config) : this(config.ToString())
             { }
 
-        public MySqlDb(string hostname, string username, string password, string database, int port = 3306, string sslmode = "none")
-            : this($"Server={hostname};Database={database};port={port};User Id={username};password={password};SslMode={sslmode};")
+        public MySqlDb(string hostname, string username, string password, string database, int port = 3306, string sslmode = "none", bool userVariables = false)
+            : this($"Server={hostname};Database={database};port={port};User Id={username};password={password};SslMode={sslmode};AllowUserVariables={userVariables}")
             { }
 
         public MySqlDb Table(string name)
